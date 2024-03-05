@@ -1,0 +1,29 @@
+### Get Metadata    
+GET http://localhost:4004/odata/v4/my-controller/$metadata 
+
+### Get Outputdata 
+GET http://localhost:44107/odata/v4/my-controller/OutputData
+
+### Media Opreation
+POST http://localhost:44107/odata/v4/my-controller/MediaFile
+Content-Type: application/json
+
+{
+    "mediaType" :"pdf",
+    "fileName" : "test.pdf"
+}
+
+### Update the record posted with pdf content
+PUT http://localhost:44107/odata/v4/my-controller/MediaFile(6a0c6351-13c7-4f86-b657-9121073ecb54)/content
+Content-Type: application/pdf
+
+<../srv/umesh1.pdf 
+ 
+
+### Create some media file
+
+POST http://localhost:44107/v2/odata/v4/my-controller/MediaFile
+slug: MyTestPDF.pdf
+Content-Type: application/pdf
+
+<../srv/umesh1.pdf 
